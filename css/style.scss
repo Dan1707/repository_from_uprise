@@ -8,3 +8,44 @@
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
 }
+// MIXINS
+@mixin container {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// HEADER
+.header {
+  width: 100vw;
+  padding: 30px 0;
+  background-color: cadetblue;
+  &__container {
+    @include container;
+    @include flex;
+  }
+
+  &__logo {
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffffff !important;
+  }
+
+  &__menu {
+    @include flex;
+    width: 50%;
+    column-gap: 20px;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffffff !important;
+  }
+}
